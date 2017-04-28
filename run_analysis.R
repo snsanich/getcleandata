@@ -48,6 +48,9 @@ levels(set$activity) <- levels(activityLabels[[2]])
 # 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 tidySet <- set %>% group_by(activity, subject, measurement) %>% summarize(mean=mean(value))
 
+# @DONE - output is analysis, on 5 step
+tidySet
+
 if (run_analysis_to_file) {
     write.table(set, 'set.txt', sep="\t", row.names = FALSE)
     write.table(tidySet, 'tidySet.txt', sep="\t", row.names = FALSE)
